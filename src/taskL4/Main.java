@@ -2,7 +2,7 @@ package taskL4;
 
 import java.util.Arrays;
 
-class TaskL4 {
+class Main {
     public static void main(String[] args) {
         // 1
         System.out.println("task 1");
