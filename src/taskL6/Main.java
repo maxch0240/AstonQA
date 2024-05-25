@@ -19,9 +19,19 @@ public class Main {
         employeesArray[4] = new Employee("Jimmy Hardy", "QA",
                 "jimmyhardy@mailbox.com", "9999123999", 60000, 31);
 
+        System.out.println("Employees: \n");
         for (Employee employee : employeesArray) {
             employee.displayInfo();
             System.out.println();
         }
+        System.out.println("\n\n\n");
+
+        System.out.println("Park: \n");
+        Park park = new Park();
+        park.createAttraction("Bumper cars", "10:10 - 18:00", 10);
+        park.createAttraction("Haunted house", "17:00 - 22:00", 7);
+        park.createAttraction("Rollercoaster", "10:10 - 17:00", 20);
+
+        park.showAttractions();
     }
 }
