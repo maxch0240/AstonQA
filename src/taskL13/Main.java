@@ -36,5 +36,11 @@ public class Main {
         for(String e: numbers){
             System.out.println(e);
         }
+
+        numbers = phoneBook.get("Novak");
+        System.out.println("Phone numbers for Novak:");
+        for(String e: numbers){
+            System.out.println(e);
+        }
     }
 }
