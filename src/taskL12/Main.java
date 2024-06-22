@@ -8,15 +8,9 @@ public class Main {
                 {"9", "10", "11", "12"},
                 {"13", "14", "15", "16"}
         };
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
-                System.out.print(validArray[i][j] + " ");
-            }
-            System.out.println();
-        }
 
         String[][] wrongSizeArray = new String[][] {
-                {"1", "2", "3", "4"},
+                {"1", "2", "3", "4", "1"},
                 {"5", "6", "7", "8"},
                 {"9", "10", "11", "12"},
                 {"13", "14", "15", "16", "17", "18"}
@@ -29,28 +23,37 @@ public class Main {
                 {"13", "14", "15", "16"}
         };
 
+        int sum;
         try {
-            ArrayHandler.processArray(validArray);
+            sum = ArrayHandler.processArray(validArray);
+            System.out.println("No exceptions in validArray");
+            System.out.println("sum: " + sum);
         } catch (MyArraySizeException e) {
-            System.out.println("MyArraySizeException");
+            System.out.println("MyArraySizeException in validArray");
         } catch (MyArrayDataException e) {
-            System.out.println("MyDataSizeException");
+            System.out.println("MyDataSizeException in validArray");
         }
 
+        System.out.println();
         try {
-            ArrayHandler.processArray(wrongSizeArray);
+            sum = ArrayHandler.processArray(wrongSizeArray);
+            System.out.println("No exceptions in wrongSizeArray");
+            System.out.println("sum: " + sum);
         } catch (MyArraySizeException e) {
-            System.out.println("MyArraySizeException");
+            System.out.println("MyArraySizeException in wrongSizeArray");
         } catch (MyArrayDataException e) {
-            System.out.println("MyDataSizeException");
+            System.out.println("MyDataSizeException in wrongSizeArray");
         }
 
+        System.out.println();
         try {
-            ArrayHandler.processArray(wrongDataArray);
+            sum = ArrayHandler.processArray(wrongDataArray);
+            System.out.println("No exceptions in wrongDataArray");
+            System.out.println("sum: " + sum);
         } catch (MyArraySizeException e) {
-            System.out.println("MyArraySizeException");
+            System.out.println("MyArraySizeException in wrongDataArray");
         } catch (MyArrayDataException e) {
-            System.out.println("MyDataSizeException");
+            System.out.println("MyDataSizeException in wrongDataArray");
         }
     }
 }
