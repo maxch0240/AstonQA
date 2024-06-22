@@ -1,5 +1,8 @@
 package taskL11;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Dog dogBobic = new Dog("Бобик");
@@ -30,5 +33,20 @@ public class Main {
         System.out.println("Всего животных: " + Animal.getAnimalCount());
         System.out.println("Всего собак: " + Dog.getDogCount());
         System.out.println("Всего котов: " + Cat.getCatCount());
+
+        Integer bowlOfFood = 100;
+
+        List<Cat> listOfCats = new ArrayList<>(6);
+        listOfCats.add(catBarsik);
+        listOfCats.add(catTom);
+        listOfCats.add(new Cat("Барсик"));
+        listOfCats.add(new Cat("Амур"));
+        listOfCats.add(new Cat("Сноу"));
+        listOfCats.add(new Cat("Блэки"));
+
+        for (Cat cat: listOfCats) {
+            cat.eatFromBowl(bowlOfFood);
+            System.out.println("В миске осталось: " + bowlOfFood);
+        }
     }
 }
