@@ -3,6 +3,7 @@ package taskL11;
 public class Cat extends Animal{
     private static int catCount = 0;
     private boolean satiety = false;
+    private static int bowlOfFood = 0;
 
     public Cat(String name) {
         super.name = name;
@@ -26,18 +27,22 @@ public class Cat extends Animal{
         System.out.println("Кот не умеет плавать");
     }
 
-    public void eatFromBowl(Integer bowl) {
-        if (bowl < 20) {
-            System.out.println("Коту не удалось поесть");
+    public void eatFromBowl() {
+        if (bowlOfFood < 20) {
+            System.out.println("Кот " + this.name + " не насытился");
         } else {
-            System.out.println("Кот насытился");
-            bowl -= 20;
+            System.out.println("Кот " + this.name + " насытился");
+            bowlOfFood -= 20;
             satiety = true;
         }
     }
 
-    public void addToBowl(Integer bowl, int addFood) {
-        bowl += addFood;
+    public static void addToBowl(int addFood) {
+        bowlOfFood += addFood;
+    }
+
+    public static int getBowlOfFood() {
+        return bowlOfFood;
     }
 
     public static int getCatCount() {

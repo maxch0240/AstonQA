@@ -34,8 +34,6 @@ public class Main {
         System.out.println("Всего собак: " + Dog.getDogCount());
         System.out.println("Всего котов: " + Cat.getCatCount());
 
-        Integer bowlOfFood = 100;
-
         List<Cat> listOfCats = new ArrayList<>(6);
         listOfCats.add(catBarsik);
         listOfCats.add(catTom);
@@ -44,9 +42,11 @@ public class Main {
         listOfCats.add(new Cat("Сноу"));
         listOfCats.add(new Cat("Блэки"));
 
+        System.out.println();
+        Cat.addToBowl(100);
         for (Cat cat: listOfCats) {
-            cat.eatFromBowl(bowlOfFood);
-            System.out.println("В миске осталось: " + bowlOfFood);
+            cat.eatFromBowl();
+            System.out.println("В миске осталось: " + Cat.getBowlOfFood());
         }
     }
 }
